@@ -26,7 +26,7 @@ export default function Storefront() {
     }
   }, []);
 
-  // 3. Combined Filter Logic: This does NOT destroy your category filter
+  // 3. Combined Filter Logic
   const displayProducts = useMemo(() => {
     let result = products;
 
@@ -77,18 +77,39 @@ export default function Storefront() {
             </div>
           )}
 
-          {currentProducts.length > 0 ? (
+    {currentProducts.length > 0 ? (
             <>
+            <div className="product-grid">
               <Product products={currentProducts} />
               {/* Pagination controls using totalPages */}
-            </>
+           </div> 
+           <div className="d-flex justify-content-center mt-4">
+        <button 
+          disabled={currentPage === 1} 
+          onClick={() => setCurrentPage(currentPage - 1)}
+        >
+          <IoChevronBackOutline />
+        </button>
+        <span>Page {currentPage} of {totalPages}</span>
+        <button 
+          disabled={currentPage === totalPages} 
+          onClick={() => setCurrentPage(currentPage + 1)}
+        >
+          <IoChevronForwardOutline />
+        </button>
+      </div> </>
           ) : (
             <div className="text-center">
               <h4>No products found.</h4>
             </div>
           )}
+
+        
         </div>
       </div>
+      <style>{`
+  
+`}</style>
     </div>
   );
 }

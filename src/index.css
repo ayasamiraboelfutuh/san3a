@@ -87,3 +87,5 @@ h1, h2, h3, .navbar-brand { font-family: var(--heading) !important; color: var(-
   background-color: #c85a32; /* Matches your accentClay */
 }
 /* Prevent tables from being wider than their container */
+/* Add this to your global CSS */
+/*  */
