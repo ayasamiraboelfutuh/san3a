@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --text: #5c524d;
+  --text-h: #2c1a11;
+  --bg: ##fcf8f1;
+  --border: rgba(44, 26, 17, 0.08);
+  --accent: #c85a32;
+  --accent-bg: rgba(200, 90, 50, 0.08);
+  --heading: 'Playfair Display', 'Georgia', serif;
+  --sans: system-ui, sans-serif;
+
+  font: 17px/155% var(--sans);
+  color: var(--text);
+  /* background: var(--bg); */
+}
+body { margin: 0; background-color: rgba(253, 252, 247, 0.95); }
+h1, h2, h3, .navbar-brand { font-family: var(--heading) !important; color: var(--text-h); }
+
+/* Add this to your component's CSS or style object */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-5px);
+}
+/* Add to your global CSS file */
+
+
+/* Container for pagination */
+.pagination {
+  gap: 5px; /* Adds space between buttons */
+}
+
+/* Base style for page links */
+.page-link {
+  border-radius: 50% !important; /* Makes them circular */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2c1a11; /* primaryEarth */
+  border: 1px solid #c85a32; /* accentClay */
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hover state */
+.page-link:hover {
+  background-color: #c85a32;
+  color: white;
+  border-color: #c85a32;
+}
+
+/* Active (Current) page style */
+.page-item.active .page-link {
+  background-color: #c85a32 !important;
+  border-color: #c85a32 !important;
+  color: white;
+  box-shadow: 0 4px 6px rgba(200, 90, 50, 0.3);
+}
+
+/* Disabled state (Previous/Next) */
+.page-item.disabled .page-link {
+  border-color: #dee2e6;
+  color: #adb5bd;
+}
+
+.card {
+  border-radius: 15px;
+  border: none;
+}
+
+.btn-dark {
+  background-color: #2c1a11; /* Matches your primaryEarth */
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #c85a32; /* Matches your accentClay */
+}
+/* Prevent tables from being wider than their container */
