@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin } from 'lucide-react';
 import RegisterArtisan from '../../pages/RegisterArtisan';
+import { HashLink } from 'react-router-hash-link';
 export default function Footer({ setCurrentView }) {
   const primaryEarth = '#2c1a11'; // Deep Espresso Brown
   const accentClay = '#c85a32';  // Accent Clay Orange
@@ -32,12 +33,27 @@ export default function Footer({ setCurrentView }) {
          {/* COLUMN 2: Navigation Links */}
 <div className="col-12 col-md-4 text-md-center">
   <div className="d-flex flex-column align-items-center gap-2" style={{ fontSize: '11px', color: 'rgba(44, 26, 17, 0.75)' }}>
-    <a href="#" onClick={(e) => { e.preventDefault(); setCurrentView('marketplace'); }} className="text-decoration-none footer-sand-link">
-      Marketplace Studio
-    </a>
-    <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 400, behavior: 'smooth' }); }} className="text-decoration-none footer-sand-link">
-      How It Works
-    </a>
+    <Link 
+  to="/" 
+  className="text-decoration-none footer-sand-link"
+  onClick={() => {
+    // 1. Update your view state
+    setCurrentView('marketplace');
+    
+    // 2. Smoothly scroll to the very top (0,0)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+>
+  Marketplace Studio
+</Link>
+
+    <HashLink 
+  to="/#how-it-works" 
+  smooth 
+  className="text-decoration-none footer-sand-link"
+>
+  How It Works
+</HashLink>
     
     {/* ADD THIS NEW LINK */}
     <Link to="/register-artisan" className="text-decoration-none footer-sand-link">

@@ -52,7 +52,8 @@ export default function HowItWorks() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#EBD2AD' }}>
+    <section id="how-it-works" className="how-it-works-container" style={{ backgroundColor: '#EBD2AD' }}>
+      
     <div className="container my-5 py-5 overflow-hidden" ref={sectionRef} >
       
       {/* SECTION HEADER */}
@@ -128,6 +129,9 @@ export default function HowItWorks() {
         }
       `}</style>
     </div>
-    </div>
+       </section>
+    
+    
   );
 }
+ 

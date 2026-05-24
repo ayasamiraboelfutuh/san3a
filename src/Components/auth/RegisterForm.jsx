@@ -8,7 +8,7 @@ export default function RegisterForm({ role, onSubmit }) {
 
   return (
     <form onSubmit={(e) => { e.preventDefault(); onSubmit(formData); }}>
-      <h3 className="mb-3">Register as {role === 'seller' ? 'Artisan' : 'Customer'}</h3>
+      <h6 className="mb-4 text-center">Register as {role === 'seller' ? 'Artisan' : 'Customer'}</h6>
       
       <div className="mb-3">
         <input type="text" className="form-control" placeholder="Full Name" onChange={(e) => setFormData({...formData, name: e.target.value})} required />

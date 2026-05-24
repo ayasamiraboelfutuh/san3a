@@ -29,7 +29,8 @@ export default function Navbar({ cartCount }) {
             
             {/* Artisan Center Link */}
             {user?.role === 'seller' && (
-        <Link to="/artisan-dashboard" >My Dashboard</Link>
+        <Link to="/artisan-dashboard" style={{ cursor: 'pointer', fontSize: '14px', fontWeight: location.pathname === '/' ? '600' : '400', color: location.pathname === '/' ? primaryEarth : '#7f746d', borderBottom: `2px solid ${location.pathname === '/' ? accentClay : 'transparent'}`, paddingBottom: '4px', textDecoration: 'none' }}>
+               My Dashboard</Link>
       )}
             {/* <Link to="/artisan-dashboard" className="nav-item-custom" style={{ cursor: 'pointer', fontSize: '14px', fontWeight: location.pathname === '/artisan-dashboard' ? '600' : '400', color: location.pathname === '/artisan-dashboard' ? primaryEarth : '#7f746d', borderBottom: `2px solid ${location.pathname === '/artisan-dashboard' ? accentClay : 'transparent'}`, paddingBottom: '4px', textDecoration: 'none' }}>
               Artisan Center

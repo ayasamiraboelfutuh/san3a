@@ -25,7 +25,7 @@ export const initialProducts = [
     img: "../public/assets/img/Ceramic Vase.png" 
   },  {
     id: 3,
-    name: "Traditional Handblown Amber Carafe",
+    name: "Traditional Handblown  ",
     price: 550,
     reviews: [ // <--- IT MUST BE HERE
       { id: 101, stars: 5 },

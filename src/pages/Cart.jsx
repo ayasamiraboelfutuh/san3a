@@ -3,6 +3,9 @@ import { useCart } from '../context/CartContext';
 import { IoTrashOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 export default function Cart() {
+  const primaryEarth = '#2c1a11';
+  const accentClay = '#c85a32';
+
   const { cartItems, removeFromCart,updateQuantity } = useCart();
   
   const totalPrice = cartItems.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
@@ -10,7 +13,7 @@ export default function Cart() {
   if (cartItems.length === 0) {
     return <div className="text-center py-5">
         <h3 className="mb-4">Your cart is empty.</h3>
-        <Link to="/storefront" className="btn btn-primary px-4 py-2">
+        <Link to="/storefront" className="btn rounded-pill px-4 text-white d-none d-md-inline-block shadow-sm me-2 navbar-shop-now-btn" style={{ backgroundColor: primaryEarth, fontSize: '13px', fontWeight: '600', border: 'none', transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)', textDecoration: 'none' }}>
           Continue Shopping
         </Link>
       </div>
@@ -67,6 +70,11 @@ export default function Cart() {
           </div>
         </div>
       </div>
+        
+      <style>{`
+        .nav-item-custom:hover { color: ${accentClay} !important; }
+        .navbar-shop-now-btn:hover { background-color: ${accentClay} !important; transform: translateY(-1px); }
+      `}</style>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import OurStory from '../Components/home/OurStory';
 
 export default function Marketplace({ setCurrentView, handleAddToCart,products }) {
   if (!products || products.length === 0) {
-    return <div className="text-center py-5">Loading Marketplace products...</div>;
+    return <div className="text-center py-5">Loading ...</div>;
   }
   return (
     <>
